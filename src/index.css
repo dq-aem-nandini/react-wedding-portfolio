@@ -1,13 +1,55 @@
+/* Base browser resets */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+/* Swiper (FIRST) */
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/effect-fade";
+@import "swiper/css/pagination";
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================================== */
+/* Wedding Slider – Pagination Dots (Tailwind-powered) */
+/* ===================================================== */
+
+@layer components {
+  /* Pagination container */
+  .swiper-pagination {
+    @apply flex justify-center mt-6;
+
+    /* 🔑 Swiper variables (THIS IS THE KEY) */
+    --swiper-pagination-color: #d6b16a;                /* active dot */
+    --swiper-pagination-bullet-inactive-color: #9b7c38; /* inactive dot */
+    --swiper-pagination-bullet-inactive-opacity: 0.35;
+  }
+
+  /* Bullet size & shape */
+  .swiper-pagination-bullet {
+    @apply w-2 h-2 rounded-full mx-1.5 transition-all duration-300;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}
+
+
+
+
